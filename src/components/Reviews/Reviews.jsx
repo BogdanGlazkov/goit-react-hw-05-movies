@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import PropTypes from 'prop-types';
 import { API } from 'services/api.services';
 import { Container } from 'components/Container/Container';
 import { ReviewsList } from './ReviewsList';
@@ -16,7 +17,7 @@ const Reviews = () => {
                 setStatus('not found');
                 return;
             };
-
+            
             setReviews(res.results);
             setStatus('resolved');
         }).catch((err) => {
@@ -33,6 +34,12 @@ const Reviews = () => {
             {status === 'rejected' && <p>`Sorry! ${errorMessage}</p>}
         </Container>
     );
+};
+
+Reviews.propTypes = {
+    status: PropTypes.string,
+    reviews: PropTypes.array,
+    errorMessage: PropTypes.string,
 };
 
 export default Reviews;

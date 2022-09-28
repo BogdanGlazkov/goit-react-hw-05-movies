@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
+import PropTypes from 'prop-types';
 import { NavBar, StyledLink } from './Shared-layout.styled';
 
 export const SharedLayout = () => {
@@ -14,4 +15,8 @@ export const SharedLayout = () => {
             </Suspense>
         </header>
     );
+};
+
+SharedLayout.propTypes = {
+    fallback: PropTypes.node,
 };

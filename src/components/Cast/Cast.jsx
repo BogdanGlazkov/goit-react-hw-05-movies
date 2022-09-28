@@ -31,10 +31,10 @@ const Cast = () => {
     )
 };
 
-export default Cast;
-
 Cast.propTypes = {
-  status: PropTypes.string.isRequired,
-  cast: PropTypes.array,
-  errorMessage: PropTypes.string,
+    status: PropTypes.string,
+    cast: PropTypes.array,
+    errorMessage: PropTypes.string,
 };
+
+export default Cast;

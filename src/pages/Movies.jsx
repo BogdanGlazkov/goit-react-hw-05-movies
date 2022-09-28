@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import PropTypes from 'prop-types';
 import { SearchForm } from "components/Search-form/Search-form";
 import { Container } from "components/Container/Container";
 import { API } from "services/api.services";
@@ -44,6 +45,13 @@ const Movies = () => {
             </Container>
         </main>
     );
+};
+
+Movies.propTypes = {
+    handleFormSubmit: PropTypes.func,
+    errorMessage: PropTypes.string,
+    movies: PropTypes.array,
+    from: PropTypes.string,
 };
 
 export default Movies;

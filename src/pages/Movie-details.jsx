@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import PropTypes from 'prop-types';
 import { API } from 'services/api.services';
 import { MovieItem } from "components/Movie-item/Movie-item";
 
@@ -26,6 +27,12 @@ const MovieDetails = () => {
             {status === 'rejected' && <p>{errorMessage}</p>}
         </>
     );
+};
+
+MovieDetails.propTypes = {
+    status: PropTypes.string,
+    movie: PropTypes.object,
+    errorMessage: PropTypes.string,
 };
 
 export default MovieDetails;

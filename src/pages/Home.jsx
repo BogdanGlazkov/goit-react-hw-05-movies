@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import PropTypes from 'prop-types';
 import { API } from "services/api.services";
 import { Container } from "components/Container/Container";
 import { MovieList } from "components/Movie-list/Movie-list";
@@ -22,6 +23,11 @@ const Home = () => {
             </Container>
         </main>
     )
+};
+
+Home.propTypes = {
+    trendingFilms: PropTypes.array,
+    location: PropTypes.object,
 };
 
 export default Home;

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import PropTypes from 'prop-types';
 import { Container } from "components/Container/Container";
 import { StyledForm, StyledInput, StyledButton } from "./Search-form.styled";
 
@@ -29,4 +30,10 @@ export const SearchForm = ({ onSubmit }) => {
             </StyledForm>
         </Container>
     );
+};
+
+SearchForm.propTypes = {
+    handleFormSubmit: PropTypes.func,
+    handleInputChange: PropTypes.func,
+    query: PropTypes.string,
 };

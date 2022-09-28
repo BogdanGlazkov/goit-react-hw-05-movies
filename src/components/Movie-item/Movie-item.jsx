@@ -51,3 +51,16 @@ export const MovieItem = ({ movie }) => {
         </>
     )
 };
+
+MovieItem.propTypes = {
+    from: PropTypes.string,
+    cast: PropTypes.arrayOf(PropTypes.shape({
+        name: PropTypes.string,
+        title: PropTypes.string,
+        genres: PropTypes.array,
+        poster_path: PropTypes.string,
+        vote_average: PropTypes.number,
+        overview: PropTypes.string,
+        release_date: PropTypes.string,
+    })
+)};
